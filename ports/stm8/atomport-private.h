@@ -30,7 +30,7 @@
 #ifndef __ATOM_PORT_PRIVATE_H
 #define __ATOM_PORT_PRIVATE_H
 
-
+#include "atomport.h"
 /**
  * Compiler-specific modifier to prevent some functions from saving
  * and restoring registers on entry and exit, if the function is
@@ -61,7 +61,7 @@
  * example).
  */
 #if defined(__CSMC__)
-#define INTERRUPT @far @interrupt @svlreg
+//#define INTERRUPT @far @interrupt @svlreg
 #elif defined (__IAR_SYSTEMS_ICC__)
 #define INTERRUPT __interrupt
 #elif defined(__RCSTM8__) || defined(__SDCC_stm8)
@@ -72,7 +72,7 @@
 /* Function prototypes */
 void archInitSystemTickTimer (void);
 #ifndef __SDCC_stm8
-INTERRUPT void TIM1_SystemTickISR (void);
+@svlreg INTERRUPT void TIM1_SystemTickISR (void);
 #else
 void TIM1_SystemTickISR (void) __interrupt(11);
 #endif
