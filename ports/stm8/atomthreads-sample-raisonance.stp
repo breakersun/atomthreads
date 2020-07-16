@@ -422,11 +422,6 @@ Next=Root.Peripherals.stm8s-periphs\stm8s.h
 [Root.Peripherals.stm8s-periphs\stm8s.h]
 ElemType=File
 PathName=stm8s-periphs\stm8s.h
-Next=Root.Peripherals.stm8s-periphs\stm8s_type.h
-
-[Root.Peripherals.stm8s-periphs\stm8s_type.h]
-ElemType=File
-PathName=stm8s-periphs\stm8s_type.h
 
 [Root.Port]
 ElemType=Folder
